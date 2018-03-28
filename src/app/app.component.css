@@ -1,0 +1,19 @@
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 300px;
+}
+.justify-content-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+a > i{
+    padding-right:20px;
+  }
+
+.fa-2x{
+    font-size:48px
+}

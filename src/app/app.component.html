@@ -1,0 +1,69 @@
+<div class="container">
+  <span class="text-center">
+    <h1>{{portfolio.firstName + ' ' + portfolio.middleName[0] + '. ' + portfolio.lastName}}</h1>
+    <h2 class="subHeading">{{portfolio.subheading}}</h2>
+    <img class="center-img" src="https://avatars3.githubusercontent.com/u/31047492?s=460&amp;v=4">
+  </span>
+
+  <div class="row justify-content-center">
+    <a [href]="social.link" class="p-2" target="blank" *ngFor="let social of portfolio.socialMedia">
+      <i [style.color]="social.color" [class]="social.icon"></i>
+    </a>
+  </div>
+
+  <div>
+    <h3>
+
+      <i (click)="toggleOpen('logOpen')" *ngIf="logOpen; else logExpanded" class="fa fa-plus"></i>
+      <ng-template #logExpanded>
+      <i class="fa fa-minus" (click)="toggleOpen('logOpen')" ></i>
+      </ng-template>
+      Accomplishments
+    </h3>
+    <p class="description">I've been studying and working hard to become are better developer, take a look at some of my achievements.</p>
+    <div *ngIf="!logOpen" [@fadeInOut]>
+      <ul>
+        <li *ngFor="let change of portfolio.changeLog" [ngStyle] = "{'color': change.color}"
+        (mouseenter)="change.showDetails= true;" (mouseleave)="change.showDetails= false;"
+        >
+            <div>{{change.month + ' - ' + change.year}}</div>
+            <div>{{change.highlight}}</div>
+            <div *ngIf="change.showDetails" class="changeLogDetails" [@fadeInOut]>{{change.details}}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h3>
+      <i class="fa fa-plus" *ngIf="updateOpen; else updateExpanded" (click)="toggleOpen('updateOpen')"></i>
+      <ng-template #updateExpanded>
+      <i class="fa fa-minus" (click)="toggleOpen('updateOpen')"></i>
+      </ng-template>
+      Updates/Projects
+    </h3>
+    <p class="description">Links to projects.</p>
+    <div *ngIf="!updateOpen"  [@fadeInOut]>
+      <ul>
+        <li class="liUpdates pt-3" *ngFor="let update of portfolio.updates">
+          <a [href]="update.link" class="updates" target="blank">{{update.description}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <h3>
+      <i class="fa fa-plus" (click)="toggleOpen('bioOpen')" *ngIf="bioOpen; else bioExpanded"></i>
+      <ng-template #bioExpanded>
+      <i class="fa fa-minus"(click)="toggleOpen('bioOpen')"></i>
+      </ng-template>
+      Personal Bio
+    </h3>
+    <p class="description">Get to know me.</p>
+    <div *ngIf="!bioOpen" class="speakerBio p-5 mb-5"  [@fadeInOut]>
+      {{portfolio.speakerBio}}
+    </div>
+  </div>
+
+</div>

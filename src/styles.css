@@ -1,0 +1,45 @@
+.subHeading{
+  font-weight: 300;
+  color: white;
+}
+
+body {
+  background: #23252D !important;
+}
+
+.container {
+  color: #CACACC;
+}
+
+.smallerImg {
+  width: 20%;
+}
+
+i:hover{
+  color:white !important;
+}
+
+.changeLogDetails {
+  font-weight: 300;
+  color:white;
+}
+
+.liUpdates{
+  list-style: none;
+}
+
+.updates{
+  color: #E9BC3F;
+  text-decoration: none;
+}
+
+.updates:hover{
+  color: #E9BC3F;
+  text-decoration: none;
+}
+
+.speakerBio {
+  background: #2f313b;
+  color: white;
+  line-height: 1.8em;
+}
