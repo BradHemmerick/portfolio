@@ -112,6 +112,11 @@ export class AppComponent implements OnInit {
         },
         {
           description: 
+            "Chirpy. A simple Social Media made with Handlebars, Node.js, Express, Socket.IO, bcrypt, crypto, and passport",
+          link: "https://bradhemmerick.github.io/Trivia-Game/"
+        },
+        {
+          description: 
             "Trivia Game. A simple game made with HTML5 and jQuery",
           link: "https://bradhemmerick.github.io/Trivia-Game/"
         }
